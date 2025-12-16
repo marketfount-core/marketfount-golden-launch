@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 font-body",
   {
     variants: {
       variant: {
@@ -15,11 +15,19 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        // MarketFount premium variants
+        gold: "bg-gradient-gold text-primary-foreground font-semibold shadow-lg hover:shadow-gold-sm hover:scale-[1.02] active:scale-[0.98]",
+        "gold-outline": "border-2 border-primary bg-transparent text-primary hover:bg-primary/10 font-semibold",
+        hero: "bg-gradient-gold text-primary-foreground font-semibold text-base px-8 py-6 shadow-lg hover:shadow-gold hover:scale-[1.02] active:scale-[0.98]",
+        "hero-outline": "border-2 border-primary/60 bg-transparent text-foreground hover:border-primary hover:bg-primary/5 font-medium text-base px-8 py-6",
+        navy: "bg-navy text-secondary-foreground hover:bg-navy-light font-semibold",
+        emerald: "bg-emerald text-accent-foreground hover:bg-emerald-light font-semibold",
       },
       size: {
         default: "h-10 px-4 py-2",
         sm: "h-9 rounded-md px-3",
         lg: "h-11 rounded-md px-8",
+        xl: "h-14 rounded-lg px-10 text-base",
         icon: "h-10 w-10",
       },
     },
